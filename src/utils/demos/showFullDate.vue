@@ -8,7 +8,7 @@
 <script setup>
 import { ref } from 'vue'
 
-import TvRelativeTime from "@todovue/tv-relative-time";
+import { TvRelativeTime } from "@todovue/tv-relative-time";
 
 const date = ref('2027-09-15T00:00:00Z')
 </script>
