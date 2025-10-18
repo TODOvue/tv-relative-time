@@ -39,7 +39,7 @@
     "README.md"
   ],
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=20.19.0"
   },
   "scripts": {
     "dev": "vite",
@@ -51,9 +51,9 @@
   },
   "devDependencies": {
     "@todovue/tv-demo": "^1.0.0",
-    "@vitejs/plugin-vue": "^5.0.0",
+    "@vitejs/plugin-vue": "^6.0.0",
     "sass": "^1.0.0",
-    "vite": "^6.0.0",
+    "vite": "^7.0.0",
     "vite-plugin-css-injected-by-js": "^3.0.0",
     "vite-plugin-dts": "^4.0.0"
   }

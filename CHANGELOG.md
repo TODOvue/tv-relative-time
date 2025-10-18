@@ -5,6 +5,17 @@ All notable changes to `@todovue/tv-relative-time` will be documented in this fi
 This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
+## [1.1.1] - 2025-10-18
+### 🛠️ Changed
+- The library build now uses `src/entry.ts` (exports both the component and the plugin) instead of directly exporting the `.vue` file.
+- CSS injection via JS has been removed for the library build (it is only kept for the demo), generating a `tv-relative-time.css` file optimized for SSR/Nuxt.
+- Changed node-version to workflows release.yml to 20.
+
+### ✨ Added
+- Plugin installation support: `app.use(TvRelativeTime)` or `app.use(TvRelativeTimePlugin)`.
+- Explicit export of the style file: `import '@todovue/tv-relative-time/style.css'`.
+- Documentation for usage in SSR and Nuxt 3 applications.
+
 ## [1.1.0] - 2025-05-06
 
 ### ✨ Features
@@ -33,5 +44,6 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+[1.1.1]: https://github.com/TODOvue/tv-relative-time/pull/3/files
 [1.1.0]: https://github.com/TODOvue/tv-relative-time/pull/2/files
 [1.0.0]: https://github.com/TODOvue/tv-relative-time/pull/1/files
