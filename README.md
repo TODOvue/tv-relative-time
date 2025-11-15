@@ -4,12 +4,16 @@
 # TODOvue RelativeTime (TvRelativeTime)
 A minimal and customizable Vue 3 component to display human-readable relative dates with live updates, compact formats, and multi-language support. Works seamlessly in Single Page Apps and Server-Side Rendered (SSR) environments (e.g. Nuxt 3).
 
-[![npm](https://img.shields.io/npm/v/@todovue/tv-relative-time.svg)](https://www.npmjs.com/package/@todovue/tv-relative-time) 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cb4b8651-1062-4a0b-aa47-28437cbf9fdc/deploy-status)](https://app.netlify.com/sites/tv-relative-time/deploys) 
-[![npm downloads](https://img.shields.io/npm/dm/@todovue/tv-relative-time.svg)](https://www.npmjs.com/package/@todovue/tv-relative-time) 
-[![npm total downloads](https://img.shields.io/npm/dt/@todovue/tv-relative-time.svg)](https://www.npmjs.com/package/@todovue/tv-relative-time) 
-![License](https://img.shields.io/github/license/TODOvue/tv-relative-time) 
-![GitHub Release Date](https://img.shields.io/github/release-date/TODOvue/tv-relative-time)
+[![npm](https://img.shields.io/npm/v/@todovue/tv-relative-time.svg)](https://www.npmjs.com/package/@todovue/tv-relative-time)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b0c03bd3-4a82-48d9-b351-9c6def600247/deploy-status)](https://app.netlify.com/projects/tv-relative-time/deploys)
+[![npm downloads](https://img.shields.io/npm/dm/@todovue/tv-relative-time.svg)](https://www.npmjs.com/package/@todovue/tv-relative-time)
+[![npm total downloads](https://img.shields.io/npm/dt/@todovue/tv-relative-time.svg)](https://www.npmjs.com/package/@todovue/tv-relative-time)
+![License](https://img.shields.io/github/license/TODOvue/tv-relative-time)
+![Release Date](https://img.shields.io/github/release-date/TODOvue/tv-relative-time)
+![Bundle Size](https://img.shields.io/bundlephobia/minzip/@todovue/tv-relative-time)
+![Node Version](https://img.shields.io/node/v/@todovue/tv-relative-time)
+![Last Commit](https://img.shields.io/github/last-commit/TODOvue/tv-relative-time)
+![Stars](https://img.shields.io/github/stars/TODOvue/tv-relative-time?style=social)
 
 > Demo: https://tv-relative-time.netlify.app/
 

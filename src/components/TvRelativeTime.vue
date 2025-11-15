@@ -61,10 +61,11 @@ watch(() => props.showFullDate, updateTime)
     :datetime="props.date"
     :title="timeInfo.tooltip"
     :aria-label="timeInfo.tooltip"
+    style="cursor: help;"
   >
     {{ displayText }}
   </time>
 
 </template>
 
-<style scoped lang="scss" src="../assets/scss/styles.scss"></style>
+<style></style>
