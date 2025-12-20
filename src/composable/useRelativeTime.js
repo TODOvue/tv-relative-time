@@ -18,7 +18,11 @@ const useRelativeTime = () => {
     
     const diffInSeconds = Math.floor((date - now) / 1000)
     const diffInDays = Math.floor(diffInSeconds / 86400)
-    const sameDay = date.toDateString() === now.toDateString()
+
+    const getUTCDateString = (d) => {
+      return `${d.getUTCFullYear()}-${d.getUTCMonth()}-${d.getUTCDate()}`
+    }
+    const sameDay = getUTCDateString(date) === getUTCDateString(now)
     
     const getDayName = (d) => new Intl.DateTimeFormat(lang, { weekday: 'long' }).format(d)
     
