@@ -4,6 +4,22 @@ All notable changes to `@todovue/tv-relative-time` will be documented in this fi
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.2.1] - 2025-12-19
+
+### Added
+- Added automatic publishing to the TODOvue cPanel in `release.yml` for each release, simplifying package distribution and updates.
+- Added `package-lock.json` to the repository to ensure dependency consistency and facilitate version management across development and production environments.
+
+### Changed
+- Changed the `base` option in `vite.config.js` for website deployment in cpanel.
+
+### Fixed
+- Fixed repository URL in `package.json` to point to the correct GitHub repository.
+- Fixed the token configuration used to generate the package in the GitHub Actions workflow `release.yml`.
+
+### Dependencies
+- Updated dependency versions in `package.json` to maintain compatibility and benefit from improvements and bug fixes in the used libraries.
+
 ## [1.2.0] - 2025-11-21
 
 ### Added
@@ -59,6 +75,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ### Accessibility
 - Semantic `<time>` element with `datetime`, `title`, and `aria-label`.
 
+[1.2.1]: https://github.com/TODOvue/tv-relative-time/pull/6/files
 [1.2.0]: https://github.com/TODOvue/tv-relative-time/pull/5/files
 [1.1.2]: https://github.com/TODOvue/tv-relative-time/pull/4/files
 [1.1.1]: https://github.com/TODOvue/tv-relative-time/pull/3/files
