@@ -6,6 +6,9 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Introduced the `timeZone` property to support date formatting based on specific time zones.
+
 ### Dependencies
 - Updated the `@todovue/tv-demo` dependency to `^1.4.3`.
 - Updated the `sass` dependency to `^1.97.2`.

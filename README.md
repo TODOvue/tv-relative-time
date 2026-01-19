@@ -189,6 +189,7 @@ import { TvRelativeTime } from '@todovue/tv-relative-time'
 | `compact`        | Boolean       | `false` | No       | If true, returns compact format (`2h`, `3d`, `1w`, `2mo`). |
 | `showFullDate`   | Boolean       | `false` | No       | If true, appends the full date next to the relative time.  |
 | `lang`           | String        | `'en'`  | No       | Language code: `'en'`, `'es'`, `'fr'`, `'pt'`.             |
+| `timeZone`       | String        | `'UTC'` | No       | Target timezone (e.g. `'America/New_York'`).               |
 
 ### Prop Details
 

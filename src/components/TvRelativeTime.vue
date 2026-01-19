@@ -22,16 +22,20 @@ const props = defineProps({
   lang: {
     type: String,
     default: 'en'
+  },
+  timeZone: {
+    type: String,
+    default: 'UTC'
   }
 })
 
 const { getRelativeTime } = useRelativeTime(props.lang)
-const timeInfo = ref({ text: '-' })
+const timeInfo = ref({ text: '-', tooltip: '' })
 let intervalId = null
 
 const updateTime = () => {
   if (!props.date) return
-  timeInfo.value = getRelativeTime(props.date, false, props.compact, props.lang)
+  timeInfo.value = getRelativeTime(props.date, false, props.compact, props.lang, props.timeZone)
 }
 
 const displayText = computed(() => {
@@ -53,6 +57,7 @@ watch(() => props.date, updateTime)
 watch(() => props.lang, updateTime)
 watch(() => props.compact, updateTime)
 watch(() => props.showFullDate, updateTime)
+watch(() => props.timeZone, updateTime)
 </script>
 
 <template>
@@ -63,7 +68,13 @@ watch(() => props.showFullDate, updateTime)
     :aria-label="timeInfo.tooltip"
     :style="props.showFullDate ? '' : 'cursor: help;'"
   >
-    {{ displayText }}
+    <slot 
+      :text="timeInfo.text" 
+      :tooltip="timeInfo.tooltip" 
+      :original-date="props.date"
+    >
+      {{ displayText }}
+    </slot>
   </time>
 </template>
 

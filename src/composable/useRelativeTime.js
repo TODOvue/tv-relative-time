@@ -1,21 +1,21 @@
 import relativeTimeLocales from '../locales/relativeTime.js'
 
 const useRelativeTime = () => {
-  const getRelativeTime = (dateString, isTableQuantity = false, compact = false, lang = 'en') => {
+  const getRelativeTime = (dateString, isTableQuantity = false, compact = false, lang = 'en', timeZone = 'UTC') => {
     const t = relativeTimeLocales[lang] || relativeTimeLocales.en
-    
+
     const date = new Date(dateString)
     const now = new Date()
-    
+
     if (!dateString) return { text: isTableQuantity ? '-' : t.noDate, tooltip: '' }
-    
+
     const fullDate = new Intl.DateTimeFormat(lang, {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
-      timeZone: 'UTC'
+      timeZone, // Use the passed timeZone
     }).format(date)
-    
+
     const diffInSeconds = Math.floor((date - now) / 1000)
     const diffInDays = Math.floor(diffInSeconds / 86400)
 
@@ -23,11 +23,11 @@ const useRelativeTime = () => {
       return `${d.getUTCFullYear()}-${d.getUTCMonth()}-${d.getUTCDate()}`
     }
     const sameDay = getUTCDateString(date) === getUTCDateString(now)
-    
-    const getDayName = (d) => new Intl.DateTimeFormat(lang, { weekday: 'long' }).format(d)
-    
+
+    const getDayName = (d) => new Intl.DateTimeFormat(lang, { weekday: 'long', timeZone }).format(d)
+
     const formatUnit = (val, unit) => `${val} ${val === 1 ? t[unit] : t[unit + 's']}`
-    
+
     const formatCompact = (val, unit) => {
       const map = {
         [t.minute]: 'm',
@@ -39,7 +39,7 @@ const useRelativeTime = () => {
       }
       return `${val}${map[unit] || ''}`
     }
-    
+
     const formatDetail = ({ years, months, weeks, days }) => {
       const parts = []
       if (years) parts.push(formatUnit(years, 'year'))
@@ -48,7 +48,7 @@ const useRelativeTime = () => {
       if (days) parts.push(formatUnit(days, 'day'))
       return parts.slice(0, 2).join(', ')
     }
-    
+
     const getDetailedBreakdown = (start, end) => {
       let remainingDays = Math.floor((end - start) / 86400000)
       const years = Math.floor(remainingDays / 365)
@@ -59,7 +59,7 @@ const useRelativeTime = () => {
       const days = remainingDays % 7
       return { years, months, weeks, days }
     }
-    
+
     if (sameDay) {
       const absSeconds = Math.abs(diffInSeconds)
       if (absSeconds < 60) {
@@ -68,7 +68,7 @@ const useRelativeTime = () => {
           tooltip: fullDate
         }
       }
-      
+
       if (absSeconds < 3600) {
         const minutes = Math.floor(absSeconds / 60)
         return {
@@ -80,7 +80,7 @@ const useRelativeTime = () => {
           tooltip: fullDate
         }
       }
-      
+
       const hours = Math.floor(absSeconds / 3600)
       return {
         text: compact
@@ -91,13 +91,13 @@ const useRelativeTime = () => {
         tooltip: fullDate
       }
     }
-    
+
     if (diffInSeconds > 0) {
       if (diffInDays === 1) return { text: compact ? '1d' : t.tomorrow, tooltip: fullDate }
       if (diffInDays === 2) return { text: compact ? '2d' : `${t.in} 2 ${t.days}`, tooltip: fullDate }
       if (diffInDays < 7) return { text: compact ? `${diffInDays}d` : `${t.next} ${getDayName(date)}`, tooltip: fullDate }
       if (diffInDays < 14) return { text: compact ? '1w' : t.nextWeek, tooltip: fullDate }
-      
+
       if (diffInDays < 60) {
         const weeks = Math.round(diffInDays / 7)
         return {
@@ -105,7 +105,7 @@ const useRelativeTime = () => {
           tooltip: fullDate
         }
       }
-      
+
       const detail = getDetailedBreakdown(now, date)
       return {
         text: compact
@@ -119,7 +119,7 @@ const useRelativeTime = () => {
       if (absDays === 2) return { text: compact ? '2d' : `${t.ago} 2 ${t.days}`, tooltip: fullDate }
       if (absDays < 7) return { text: compact ? `${absDays}d` : `${t.past} ${getDayName(date)}`, tooltip: fullDate }
       if (absDays < 14) return { text: compact ? '1w' : t.lastWeek, tooltip: fullDate }
-      
+
       if (absDays < 60) {
         const weeks = Math.round(absDays / 7)
         return {
@@ -127,7 +127,7 @@ const useRelativeTime = () => {
           tooltip: fullDate
         }
       }
-      
+
       const detail = getDetailedBreakdown(date, now)
       return {
         text: compact
@@ -137,7 +137,7 @@ const useRelativeTime = () => {
       }
     }
   }
-  
+
   return { getRelativeTime }
 }
 
