@@ -51,10 +51,10 @@
     "vue": "^3.5.26"
   },
   "devDependencies": {
-    "@todovue/tv-demo": "^1.2.7",
+    "@todovue/tv-demo": "^1.4.3",
     "@vitejs/plugin-vue": "^6.0.3",
-    "sass": "^1.97.1",
-    "vite": "^7.3.0",
+    "sass": "^1.97.2",
+    "vite": "^7.3.1",
     "vite-plugin-dts": "^4.2.4"
   }
 }

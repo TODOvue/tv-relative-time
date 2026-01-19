@@ -4,6 +4,13 @@ All notable changes to `@todovue/tv-relative-time` will be documented in this fi
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Dependencies
+- Updated the `@todovue/tv-demo` dependency to `^1.4.3`.
+- Updated the `sass` dependency to `^1.97.2`.
+- Updated the `vite` dependency to `^4.2.4`.
+
 ## [1.2.1] - 2025-12-19
 
 ### Added
