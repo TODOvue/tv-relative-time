@@ -13,7 +13,7 @@ const useRelativeTime = () => {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
-      timeZone, // Use the passed timeZone
+      timeZone,
     }).format(date)
 
     const diffInSeconds = Math.floor((date - now) / 1000)
