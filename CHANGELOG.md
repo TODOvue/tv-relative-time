@@ -11,6 +11,9 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 - Updated the `sass` dependency to `^1.97.2`.
 - Updated the `vite` dependency to `^4.2.4`.
 
+### Changed
+- Enhanced tooltip behavior and updated cursor styles to dynamically respond to the user's date display preference.
+
 ## [1.2.1] - 2025-12-19
 
 ### Added

@@ -59,13 +59,12 @@ watch(() => props.showFullDate, updateTime)
   <time
     class="tv-relative-time"
     :datetime="props.date"
-    :title="timeInfo.tooltip"
+    :title="!props.showFullDate ? timeInfo.tooltip : undefined"
     :aria-label="timeInfo.tooltip"
-    style="cursor: help;"
+    :style="props.showFullDate ? '' : 'cursor: help;'"
   >
     {{ displayText }}
   </time>
-
 </template>
 
 <style></style>
