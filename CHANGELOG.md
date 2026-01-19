@@ -14,6 +14,9 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 - Enhanced tooltip behavior and updated cursor styles to dynamically respond to the user's date display preference.
 
+### Removed
+- Eliminated default tooltip text for unavailable dates to improve clarity and reduce UI clutter.
+
 ## [1.2.1] - 2025-12-19
 
 ### Added

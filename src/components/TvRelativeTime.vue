@@ -26,7 +26,7 @@ const props = defineProps({
 })
 
 const { getRelativeTime } = useRelativeTime(props.lang)
-const timeInfo = ref({ text: '-', tooltip: 'Fecha no disponible' })
+const timeInfo = ref({ text: '-' })
 let intervalId = null
 
 const updateTime = () => {
