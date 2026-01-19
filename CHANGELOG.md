@@ -4,7 +4,7 @@ All notable changes to `@todovue/tv-relative-time` will be documented in this fi
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.3.0] - 2026-01-19
 
 ### Added
 - Introduced the `timeZone` property to support date formatting based on specific time zones.
@@ -92,6 +92,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ### Accessibility
 - Semantic `<time>` element with `datetime`, `title`, and `aria-label`.
 
+[1.3.0]: https://github.com/TODOvue/tv-relative-time/pull/7/files
 [1.2.1]: https://github.com/TODOvue/tv-relative-time/pull/6/files
 [1.2.0]: https://github.com/TODOvue/tv-relative-time/pull/5/files
 [1.1.2]: https://github.com/TODOvue/tv-relative-time/pull/4/files
