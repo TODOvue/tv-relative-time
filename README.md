@@ -178,18 +178,25 @@ import { TvRelativeTime } from '@todovue/tv-relative-time'
 <!-- Output: "2h (18 octobre 2024)" -->
 ```
 
+### Customizable Thresholds
+```vue
+<!-- "Just now" lasts for 5 minutes (300 seconds) -->
+<TvRelativeTime :date="newPostDate" :now-threshold="300" />
+```
+
 ---
 
 ## Props
 
-| Prop             | Type          | Default | Required | Description                                                |
-|------------------|---------------|---------|----------|------------------------------------------------------------|
-| `date`           | String/Number | —       | Yes      | Date string (ISO 8601) or timestamp to format.             |
-| `updateInterval` | Number        | `60000` | No       | Interval in milliseconds for live updates (60s default).   |
-| `compact`        | Boolean       | `false` | No       | If true, returns compact format (`2h`, `3d`, `1w`, `2mo`). |
-| `showFullDate`   | Boolean       | `false` | No       | If true, appends the full date next to the relative time.  |
-| `lang`           | String        | `'en'`  | No       | Language code: `'en'`, `'es'`, `'fr'`, `'pt'`.             |
-| `timeZone`       | String        | `'UTC'` | No       | Target timezone (e.g. `'America/New_York'`).               |
+| Prop             | Type          | Default | Required | Description                                                          |
+|------------------|---------------|---------|----------|----------------------------------------------------------------------|
+| `date`           | String/Number | —       | Yes      | Date string (ISO 8601) or timestamp to format.                       |
+| `updateInterval` | Number        | `60000` | No       | Interval in milliseconds for live updates (60s default).             |
+| `compact`        | Boolean       | `false` | No       | If true, returns compact format (`2h`, `3d`, `1w`, `2mo`).           |
+| `showFullDate`   | Boolean       | `false` | No       | If true, appends the full date next to the relative time.            |
+| `lang`           | String        | `'en'`  | No       | Language code: `'en'`, `'es'`, `'fr'`, `'pt'`.                       |
+| `timeZone`       | String        | `'UTC'` | No       | Target timezone (e.g. `'America/New_York'`).                         |
+| `nowThreshold`   | Number        | `60`    | No       | Seconds threshold to show "A moment ago" instead of "0 minutes ago". |
 
 ### Prop Details
 

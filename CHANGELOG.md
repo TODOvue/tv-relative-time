@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 - Introduced the `timeZone` property to support date formatting based on specific time zones.
+- Introduced the `nowThreshold` property to allow customizable durations for the "just now" time display.
 
 ### Dependencies
 - Updated the `@todovue/tv-demo` dependency to `^1.4.3`.

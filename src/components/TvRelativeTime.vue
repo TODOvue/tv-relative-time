@@ -26,6 +26,10 @@ const props = defineProps({
   timeZone: {
     type: String,
     default: 'UTC'
+  },
+  nowThreshold: {
+    type: Number,
+    default: 60
   }
 })
 
@@ -35,7 +39,7 @@ let intervalId = null
 
 const updateTime = () => {
   if (!props.date) return
-  timeInfo.value = getRelativeTime(props.date, false, props.compact, props.lang, props.timeZone)
+  timeInfo.value = getRelativeTime(props.date, false, props.compact, props.lang, props.timeZone, props.nowThreshold)
 }
 
 const displayText = computed(() => {
