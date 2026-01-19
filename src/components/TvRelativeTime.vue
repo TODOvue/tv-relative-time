@@ -22,16 +22,24 @@ const props = defineProps({
   lang: {
     type: String,
     default: 'en'
+  },
+  timeZone: {
+    type: String,
+    default: 'UTC'
+  },
+  nowThreshold: {
+    type: Number,
+    default: 60
   }
 })
 
 const { getRelativeTime } = useRelativeTime(props.lang)
-const timeInfo = ref({ text: '-', tooltip: 'Fecha no disponible' })
+const timeInfo = ref({ text: '-', tooltip: '' })
 let intervalId = null
 
 const updateTime = () => {
   if (!props.date) return
-  timeInfo.value = getRelativeTime(props.date, false, props.compact, props.lang)
+  timeInfo.value = getRelativeTime(props.date, false, props.compact, props.lang, props.timeZone, props.nowThreshold)
 }
 
 const displayText = computed(() => {
@@ -53,19 +61,25 @@ watch(() => props.date, updateTime)
 watch(() => props.lang, updateTime)
 watch(() => props.compact, updateTime)
 watch(() => props.showFullDate, updateTime)
+watch(() => props.timeZone, updateTime)
 </script>
 
 <template>
   <time
     class="tv-relative-time"
     :datetime="props.date"
-    :title="timeInfo.tooltip"
+    :title="!props.showFullDate ? timeInfo.tooltip : undefined"
     :aria-label="timeInfo.tooltip"
-    style="cursor: help;"
+    :style="props.showFullDate ? '' : 'cursor: help;'"
   >
-    {{ displayText }}
+    <slot 
+      :text="timeInfo.text" 
+      :tooltip="timeInfo.tooltip" 
+      :original-date="props.date"
+    >
+      {{ displayText }}
+    </slot>
   </time>
-
 </template>
 
 <style></style>
