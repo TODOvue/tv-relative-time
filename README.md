@@ -16,13 +16,11 @@ A minimal and customizable Vue 3 component to display human-readable relative da
 
 > Demo: https://ui.todovue.blog/relativetime
 
----
-
 ## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
 - [Quick Start (SPA)](#quick-start-spa)
-- [Nuxt 3 / SSR Usage](#nuxt-3--ssr-usage)
+- [Nuxt 4 / SSR Usage](#nuxt-4--ssr-usage)
 - [Component Registration Options](#component-registration-options)
 - [Usage Examples](#usage-examples)
 - [Props](#props)
@@ -36,8 +34,6 @@ A minimal and customizable Vue 3 component to display human-readable relative da
 - [Contributing](#contributing)
 - [License](#license)
 
----
-
 ## Features
 - **Human-readable formats**: "2 hours ago", "Yesterday", "In 3 days"
 - **Compact mode**: `2h`, `1d`, `3w`, `2mo` for space-constrained UIs
@@ -48,8 +44,6 @@ A minimal and customizable Vue 3 component to display human-readable relative da
 - **Lightweight & tree-shakeable**: Vue 3 marked as external dependency
 - **Semantic HTML**: Renders as `<time>` element with proper `datetime` attribute
 - **Accessible**: Includes `title` and `aria-label` for screen readers
-
----
 
 ## Installation
 Using npm:
@@ -64,8 +58,6 @@ Using pnpm:
 ```bash
 pnpm add @todovue/tv-relative-time
 ```
-
----
 
 ## Quick Start (SPA)
 Global registration (main.js / main.ts):
@@ -92,9 +84,7 @@ const publishedDate = '2024-01-15T10:30:00Z'
 </template>
 ```
 
----
-
-## Nuxt 3 / SSR Usage
+## Nuxt 4 / SSR Usage
 Create a plugin file: `plugins/tv-relative-time.client.ts` (or without `.client` suffix as it's SSR-safe):
 ```ts
 import { defineNuxtPlugin } from '#app'
@@ -123,8 +113,6 @@ import { TvRelativeTime } from '@todovue/tv-relative-time'
 </script>
 ```
 
----
-
 ## Component Registration Options
 | Approach                                                                           | When to use                                    |
 |------------------------------------------------------------------------------------|------------------------------------------------|
@@ -132,8 +120,6 @@ import { TvRelativeTime } from '@todovue/tv-relative-time'
 | Local named import `{ TvRelativeTime }`                                            | Isolated / code-split contexts                 |
 | Direct default import `import { TvRelativeTime } from '@todovue/tv-relative-time'` | Single usage or manual registration            |
 | Plugin with custom name                                                            | Custom component naming requirements           |
-
----
 
 ## Usage Examples
 
@@ -184,8 +170,6 @@ import { TvRelativeTime } from '@todovue/tv-relative-time'
 <TvRelativeTime :date="newPostDate" :now-threshold="300" />
 ```
 
----
-
 ## Props
 
 | Prop             | Type          | Default | Required | Description                                                          |
@@ -226,8 +210,6 @@ Supported languages:
 - `'fr'`: French / Français
 - `'pt'`: Portuguese / Português
 
----
-
 ## Multi-Language Support
 
 The component includes built-in translations for 4 languages. Examples:
@@ -250,8 +232,6 @@ Compact format uses universal abbreviations:
 - Weeks: `w` (e.g., `2w`)
 - Months: `mo` (e.g., `3mo`)
 - Years: `y` (e.g., `1y`)
-
----
 
 ## Composable (useRelativeTime)
 
@@ -287,8 +267,6 @@ Returns:
 }
 ```
 
----
-
 ## Customization & Formats
 
 ### Output Formats
@@ -318,8 +296,6 @@ When `showFullDate` is enabled, the full date is formatted according to the sele
 - **es**: "18 de octubre de 2024"
 - **fr**: "18 octobre 2024"
 - **pt**: "18 de outubro de 2024"
-
----
 
 ## Accessibility
 
@@ -358,8 +334,6 @@ The component is built with accessibility in mind:
 </p>
 ```
 
----
-
 ## SSR Notes
 
 - **No direct DOM access**: Safe for SSR/Nuxt environments
@@ -379,8 +353,6 @@ The component is built with accessibility in mind:
 ```
 
 The component will render the initial relative time on the server, then activate live updates on the client.
-
----
 
 ## Development
 
@@ -420,22 +392,14 @@ src/
 └── entry.ts                  # Library entry point
 ```
 
----
-
 ## Changelog
 See [CHANGELOG.md](https://github.com/TODOvue/tv-relative-time/blob/main/CHANGELOG.md) for release history and updates.
-
----
 
 ## Contributing
 PRs and issues welcome! Please read our [Contributing Guide](https://github.com/TODOvue/tv-relative-time/blob/main/CONTRIBUTING.md) and [Code of Conduct](https://github.com/TODOvue/tv-relative-time/blob/main/CODE_OF_CONDUCT.md).
 
----
-
 ## License
 [MIT](https://github.com/TODOvue/tv-relative-time/blob/main/LICENSE) © TODOvue
-
----
 
 ### Attributions
 Crafted for the TODOvue component ecosystem
