@@ -8,6 +8,7 @@
   "type": "module",
   "homepage": "https://ui.todovue.blog/relativetime",
   "repository": {
+    "name": "@todovue/tv-relative-time",
     "type": "git",
     "url": "git+https://github.com/TODOvue/tv-relative-time.git"
   },
@@ -29,31 +30,35 @@
     ".": {
       "import": "./dist/tv-relative-time.es.js",
       "require": "./dist/tv-relative-time.cjs.js"
+    },
+    "./demo": {
+      "import": "./src/demo/Demo.vue"
     }
   },
   "main": "dist/tv-relative-time.cjs.js",
   "module": "dist/tv-relative-time.es.js",
   "types": "dist/tv-relative-time.d.ts",
   "files": [
-    "dist",
+    "CHANGELOG.md",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "dist",
+    "src"
   ],
   "engines": {
     "node": ">=20.19.0"
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:demo": "cp README.md public/ && cp CHANGELOG.md public/ && VITE_BUILD_TARGET=demo vite build"
+    "build": "vite build"
   },
   "peerDependencies": {
-    "vue": "^3.5.26"
+    "vue": "^3.5.27"
   },
   "devDependencies": {
-    "@todovue/tv-demo": "^1.4.3",
+    "@todovue/tv-demo": "^1.4.11",
     "@vitejs/plugin-vue": "^6.0.3",
-    "sass": "^1.97.2",
+    "sass": "^1.97.3",
     "vite": "^7.3.1",
     "vite-plugin-dts": "^4.2.4"
   }
